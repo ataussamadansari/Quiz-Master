@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Quiz Master</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="your_score">YOUR SCORE</string>
+    <string name="your_coins">YOUR POINTS</string>
+    <string name="share_score">Share Score</string>
+    <string name="share_via">Share via</string>
+</resources>

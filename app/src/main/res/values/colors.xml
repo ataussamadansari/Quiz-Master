@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorSecondary">#FFC107</color>
+    <color name="colorWhite">#000000</color>
+    <color name="colorBlack">#FFFFFF</color>
+    <color name="colorOption">#FFFFFF</color>
+    <color name="colorNavBtn">#FFC107</color>
+    <color name="colorCard">#FF9800</color>
+    <color name="colorCard1">#2E2E2E</color>
+    <color name="colorSL">#022363</color>
+</resources>
