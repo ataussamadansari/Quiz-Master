@@ -1,6 +1,9 @@
 package com.example.quizmaster.Home;
 
+import static androidx.core.app.ActivityCompat.recreate;
+
 import android.annotation.SuppressLint;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +21,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.bumptech.glide.Glide;
 import com.example.quizmaster.Login_Signup.UserModel;
 import com.example.quizmaster.R;
+import com.example.quizmaster.ThemeHelper;
 import com.example.quizmaster.databinding.FragmentHomeBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -49,6 +53,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+        ThemeHelper.applyTheme(requireContext());
         // Init
         adapter = new CategoryAdapter(getContext(), categoryList);
         binding.catRV.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
@@ -166,7 +171,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void toggleDarkMode() {
-        // Get the current night mode state
+       /* // Get the current night mode state
         int nightModeFlags = getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK;
         if (nightModeFlags == android.content.res.Configuration.UI_MODE_NIGHT_YES) {
             // Switch to light mode
@@ -176,7 +181,11 @@ public class HomeFragment extends Fragment {
             // Switch to dark mode
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             Toast.makeText(getContext(), "Switched to Dark Mode", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+
+        boolean nightMode = (getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        ThemeHelper.saveTheme(getContext(), !nightMode);
+        recreate(getActivity());
     }
 
 
